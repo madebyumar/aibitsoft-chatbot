@@ -1,12 +1,8 @@
-# src/server.py
 from fastapi import FastAPI
-from rag_agent import ask_agent
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
 @app.get("/ask")
-def ask(q: str):
-    answer = ask_agent(q)
-    return {"answer": answer}
-
-# Run: uvicorn src.server:app --reload
+async def ask(q: str):
+    return JSONResponse({"answer": f"You asked: {q}"})
