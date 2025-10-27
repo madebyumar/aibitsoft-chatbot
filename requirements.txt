@@ -2,7 +2,7 @@ openai==1.46.0
 fastapi==0.115.0
 uvicorn==0.31.0
 chromadb==0.5.5
-tiktoken==0.7.0
+tiktoken==0.6.0
 python-dotenv==1.0.1
 requests==2.32.3
 beautifulsoup4==4.12.3
