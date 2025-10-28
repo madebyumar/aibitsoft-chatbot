@@ -9,7 +9,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ✅ Use in-memory Chroma for hosting
-chroma_client = chromadb.Client()
+chroma_client = chromadb.PersistentClient(path="data/chroma_db")
 collection = chroma_client.get_or_create_collection("aibitsoft")
 
 app = FastAPI(title="Aibitsoft Chatbot API")
